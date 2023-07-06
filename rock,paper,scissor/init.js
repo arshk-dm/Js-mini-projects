@@ -61,7 +61,17 @@ function resolve(player, computer){
         if(computer == "rock"){
             humanScore++;
         }else if(computer == "scissors"){
-            
+            computerScore++;
         }
     }
+    // if player clicks on scissors
+    else{
+        if(computer=="rock"){
+            computerScore++;
+        }else if(computer=="paper"){
+            humanScore++;
+        }
+    }
+    computerScoreDisplay.innerHTML = computerScore;
+    humanScoreDisplay.innerHTML = humanScore;
 }
