@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to do</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="body-inner">
+      <div class="container">
+        <h2>to do list</h2>
+        <div class="add-task-box">
+          <input type="text" placeholder="JS practice" id="addTask" />
+          <button id="submit" class="submit active">submit</button>
+          <button id="edit" class="edit">edit</button>
+        </div>
+        <ul class="ongoing-task-box"></ul>
+      </div>
+    </div>
+    <div class="add-section">
+      <h4>Add a new container</h4>
+      <div class="input-wrapper">
+        <input type="text" id="addSectionInput" />
+        <button class="active" id="addSectionSub">submit</button>
+      </div>
+    </div>
+    <script src="init.js"></script>
+  </body>
+</html>

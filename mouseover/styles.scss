@@ -1,0 +1,81 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .card-container {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .card {
+      position: absolute;
+      height: 250px;
+      width: 170px;
+      border-radius: 12px;
+      transition: all 0.5s ease-in-out;
+      right: 50%;
+      top: 50%;
+      transform: translate(50%, -50%);
+      pointer-events: none;
+      &:first-child {
+        background-color: lightblue;
+        transform: translate(50%, -50%) rotate(-30deg);
+        z-index: 2;
+      }
+      &:nth-child(2) {
+        background-color: lightcoral;
+        transform: translate(50%, -50%) rotate(-15deg);
+        z-index: 3;
+      }
+      &:nth-child(3) {
+        background-color: lightgreen;
+        transform: translate(50%, -50%) rotate(0deg);
+        z-index: 4;
+      }
+      &:nth-child(4) {
+        background-color: lightseagreen;
+        transform: translate(50%, -50%) rotate(15deg);
+        z-index: 5;
+      }
+      &:last-child {
+        background-color: lightslategray;
+        transform: translate(50%, -50%) rotate(30deg);
+        z-index: 6;
+      }
+    }
+    .card.flip {
+      transition: all 0.5s ease-in-out;
+      &:first-child {
+        transform: rotate(450deg);
+        right: 10%;
+        top: 10%;
+      }
+      &:nth-child(2){
+        transform: rotate(465deg);
+        top: 10%;
+        right: 80%;
+      }
+      &:nth-child(3){
+        transform: rotate(480deg);
+        top: 60%;
+        right: 80%;
+      }
+      &:nth-child(4){
+        right: 50%;
+        top: 55%;
+        transform: rotate(495deg);
+      }
+      &:last-child{
+        top: 0%;
+        right: 50%;
+        transform: rotate(510deg);
+      }
+    }
+    .secret-message{
+        z-index: 1;
+        
+    }
+  }
+}

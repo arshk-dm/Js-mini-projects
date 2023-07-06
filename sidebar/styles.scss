@@ -1,0 +1,64 @@
+body {
+  nav {
+    height: 50px;
+    background-color: lightskyblue;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0px 15px;
+    .nav-btn {
+      padding: 0px;
+      width: 35px;
+      height: 35px;
+      border: none;
+      background-color: transparent;
+      animation: beat 0.5s infinite alternate;
+      transform-origin: center;
+      svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .sidebar {
+    display: inline-block;
+    width: 0px;
+    height: 200px;
+    overflow: hidden;
+    ul {
+      transition: 0.3s all;
+      margin: 0px;
+      padding: 0px;
+      list-style-type: none;
+      li {
+        margin: 10px;
+        transition: 0.3s all;
+        padding: 5px;
+        white-space: nowrap;
+        &:hover {
+          transition: 0.3s all;
+          transform: scale(1.1);
+          background-color: lightblue;
+        }
+      }
+    }
+  }
+  .show-sidebar {
+    width: 160px;
+    transition: 0.3s all;
+  }
+  /* we also could have used transofrom translate in order to
+  achieve this, all we had to do is
+  width -> normal
+  transform: translate(-100%)
+  show-sider{
+    transform: translate(0%)
+  }*/
+}
+@keyframes beat {
+  to {
+    transform: scale(1.2);
+  }
+}

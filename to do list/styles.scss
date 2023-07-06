@@ -1,0 +1,178 @@
+body {
+  height: 100vh;
+  background-color: #525fe1;
+  button {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #f86f03;
+    border: 1px solid #ffa41b;
+    border-radius: 12px;
+    background-color: transparent;
+    padding: 10px 15px;
+    &:hover {
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+  input {
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 1px solid #ffa41b;
+    caret-color: #f86f03;
+    width: 75%;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 500;
+      color: #f86f03;
+    }
+  }
+  .body-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    height: 100%;
+
+    .container {
+      background-color: #fff6f4;
+      padding: 20px;
+      border-radius: 20px;
+      width: 50%;
+      h2 {
+        text-align: center;
+        margin: 0;
+        font-size: 25px;
+        font-weight: 700;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #f86f03;
+        margin-bottom: 2rem;
+      }
+      .add-task-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 30px 1rem 30px;
+        border-bottom: 1px dashed #525fe1;
+        margin-bottom: 1rem;
+
+        .submit {
+          display: none;
+        }
+        .edit {
+          display: none;
+        }
+        .active {
+          display: inherit;
+        }
+      }
+      .ongoing-task-box {
+        padding: 0px;
+        min-height: 100px;
+        .task-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 0px 30px;
+          margin-bottom: 0.5rem;
+          cursor: move;
+          &:last-child {
+            margin-bottom: 0px;
+          }
+          .task-description-parent {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            .task-description {
+              margin: 0px;
+              font-size: 16px;
+              color: #f86f03;
+              font-family: Arial, Helvetica, sans-serif;
+              font-weight: 500;
+              line-height: 39px;
+            }
+            .task-description.checked {
+              text-decoration: line-through;
+            }
+            input {
+              margin: 0px;
+              padding: 0px;
+              width: 20px;
+              height: 20px;
+              position: relative;
+              top: 9px;
+            }
+          }
+          .button-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+          }
+        }
+        .task-container.dragging {
+          opacity: 0.5;
+        }
+      }
+      .delete-btn {
+        display: none;
+      }
+    }
+    .container.type-2 {
+      .edit-wrapper {
+        display: none;
+        justify-content: center;
+        gap: 16px;
+        input {
+          width: 50%;
+        }
+      }
+      .edit-wrapper.active {
+        display: flex;
+      }
+      .ongoing-task-box {
+        min-height: 100px;
+        list-style-type: none;
+        .task-container {
+          marker: none;
+          .task-description-parent {
+            .check-box {
+              display: none;
+            }
+          }
+          .button-wrapper {
+            display: none;
+          }
+        }
+      }
+      .delete-btn {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+      }
+    }
+  }
+  .add-section {
+    width: 250px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fff6f4;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    h4 {
+      margin: 0px 0px 0.5rem 0px;
+      text-align: center;
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #f86f03;
+    }
+    .input-wrapper {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+}
